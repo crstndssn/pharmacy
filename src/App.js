@@ -8,6 +8,7 @@ import Navigation from './components/Navigation'
 // pages
 import Home from './pages/Home'
 import Api from './pages/Api'
+import Product from './pages/Product';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
 			<Navigation/>
 			<Api />
 			<Home />
+			<Product/>
 		</>
   );
 }
