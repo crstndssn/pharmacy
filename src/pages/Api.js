@@ -18,7 +18,6 @@ const Api = () => {
 
 			axios.request(options).then(function (response) {
 				console.log(response.data);
-				debugger
 			}).catch(function (error) {
 				console.error(error);
 			})
