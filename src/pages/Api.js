@@ -1,35 +1,47 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-
-const options = {
-	method: 'GET',
-	url: 'https://drug-info-and-price-history.p.rapidapi.com/1/druginfo',
-	params: { drug: 'advil' },
-	headers: {
-		'X-RapidAPI-Key': '9722fb91c5mshfb100fa9dd27dc2p1192c1jsn0d48ab67693d',
-		'X-RapidAPI-Host': 'drug-info-and-price-history.p.rapidapi.com'
-	}
-};
 
 const Api = () => {
-	const [drugs, setDrugs] = useState();
+  const [products, setProducts] = useState([]);
 
-	useEffect(() => {
+  useEffect(() => {
+    // Función para realizar la solicitud a la API
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('https://fakestoreapi.com/products');
 
-			axios.request(options).then(function (response) {
-				console.log(response.data);
-			}).catch(function (error) {
-				console.error(error);
-			})
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
 
+        const data = await response.json();
+        setProducts(data); // Almacenar los datos en el estado local
+      } catch (error) {
+        console.error('Fetch error:', error);
+      }
+    };
 
-	}, []); // Empty dependency array to run once on component mount
+    // Llamar a la función para obtener los productos al montar el componente
+    fetchProducts();
 
-	return (
-		<div>
+    // No olvides limpiar los efectos si es necesario
+    return () => {
+      // Código de limpieza si es necesario
+    };
+  }, []); // El segundo parámetro [] indica que este efecto se ejecuta solo una vez al montar el componente
 
-		</div>
-	);
+  return (
+    <div>
+      <h2>Product List</h2>
+      <ul>
+        {products.map(product => (
+          <li key={product.id}>
+						<img src={product.image} alt="" />
+            <strong>{product.title}</strong> - ${product.price}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
 export default Api;
