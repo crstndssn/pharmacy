@@ -23,7 +23,7 @@ function App() {
         {/* <Route exact path="/contact" component={Contact} /> */}
 			</Routes>
 			</Router>
-			<Home />
+			<Api />
 		</>
 	);
 }
