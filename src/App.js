@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-import { BrowserRouter as Router, Routes, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 // components
 import Navigation from './components/Navigation'
@@ -15,15 +15,14 @@ import Product from './pages/Product';
 function App() {
 	return (
 		<>
+	
 			<Router>
-				<Navigation />
+						<Navigation />
 				<Routes>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/product" component={Product} />
-        {/* <Route exact path="/contact" component={Contact} /> */}
-			</Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/product" element={<Product />} />
+				</Routes>
 			</Router>
-			<Api />
 		</>
 	);
 }
