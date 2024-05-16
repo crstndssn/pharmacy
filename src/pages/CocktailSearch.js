@@ -42,35 +42,34 @@ const CocktailSearch = () => {
 
 			<div className='w-full'>
 				<h2 className='text-center text-6xl mb-12 font-semibold'>Cocktail Search</h2>
-				<form onSubmit={handleSearchSubmit} className='w-full flex gap-4'>
+				<form onSubmit={handleSearchSubmit} className='w-full md:flex gap-4 px-4'>
 					<input
-						className='w-full border-2 border-black focus-visible:border-[#3AF062] py-5 px-8 rounded-4xl rounded-full text-xl placeholder:text-xl'
+						className='w-full border-2 border-black focus-visible:border-[#3AF062] py-3 px-4 md:py-5 md:px-8 mb-3 rounded-4xl rounded-full text-base md:text-xl placeholder:text-base  md:placeholder:text-xl'
 						type="text"
 						placeholder="Search by cocktail name..."
 						value={searchTerm}
 						onChange={handleSearchInputChange}
 					/>
-					<button type="submit" className='w-64 bg-[#3AF062] border-[#3AF062] hover:text-white text-black text-xl font-medium border-4 rounded-full'>Search</button>
+					<button type="submit" className='w-full md:w-64 bg-[#3AF062] border-[#3AF062] hover:text-white p-2 text-black md:text-xl font-medium border-4 rounded-full'>Search</button>
 				</form>
 				<div className='text-center my-10'>
 					<h3>Or browse by first letter:</h3>
 					<div className='mt-4'>
 							{Array.from({ length: 26 }, (_, index) => String.fromCharCode(65 + index)).map((letter) => (
-						<button className='border mx-2 p-2 shadow-sm' key={letter} onClick={() => handleLetterClick(letter)}>
+						<button className='mb-2 border mx-2 p-2 shadow-sm active:border-black' key={letter} onClick={() => handleLetterClick(letter)}>
 							{letter}
 						</button>
 					))}
 					</div>
 				
 				</div>
-				<hr />
-				<h3 className='my-3'>Results:</h3>
-				<ul className='grid grid-cols-3 gap-7'>
+				{/* <h3 class="my-3 text-center text-xl mb-3">Results:</h3> */}
+				<ul className='container mx-auto px-4 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-7'>
 					{cocktails.map((cocktail) => (
 						<li className='border-2 border-black rounded-lg' key={cocktail.idDrink}>
 							
 							<img className='rounded-t-md' src={cocktail.strDrinkThumb} alt="" srcset="" />
-							<h3 className='p-3 font-medium text-xl'>{cocktail.strDrink}</h3>
+							<h3 className='p-2 md:p-3 font-medium md:text-xl'>{cocktail.strDrink}</h3>
 							</li>
 					))}
 				</ul>

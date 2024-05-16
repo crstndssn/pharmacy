@@ -7,7 +7,7 @@ const Navigation = () => {
 			<div className="w-1/2">
 					<h2 className="font-bold text-2xl">drunk-pharmacy</h2>
 			</div>
-			<div className="w-1/4 flex justify-between">
+			<div className="w-1/4 hidden md:flex justify-between">
 				<Link exact to='/'>Inicio</Link>
 				<Link to='/products'>Porductos</Link>
 				<Link to='/product'>Porductos</Link>
