@@ -10,6 +10,8 @@ import Navigation from './components/Navigation'
 // pages
 import Home from './pages/Home'
 import Api from './pages/Api'
+import Products from './pages/Products';
+import AllProducts from './pages/TodosLosProductos';
 import Product from './pages/Product'
 import Contact from './pages/Contact'
 import About from './pages/About';
@@ -23,6 +25,8 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/product" element={<Product />} />
+					<Route path="/products" element={<Products />} />
+					<Route path="/all" element={<AllProducts />} />
 					<Route path="/contact" element={<Contact />} />
 					<Route path="/about" element={<About />} />
 				</Routes>
