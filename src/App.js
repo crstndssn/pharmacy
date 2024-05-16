@@ -10,7 +10,9 @@ import Navigation from './components/Navigation'
 // pages
 import Home from './pages/Home'
 import Api from './pages/Api'
-import Product from './pages/Product';
+import Product from './pages/Product'
+import Contact from './pages/Contact'
+import About from './pages/About';
 
 function App() {
 	return (
@@ -21,6 +23,8 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/product" element={<Product />} />
+					<Route path="/contact" element={<Contact />} />
+					<Route path="/about" element={<About />} />
 				</Routes>
 			</Router>
 		</>
