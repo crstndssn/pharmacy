@@ -75,9 +75,6 @@ const CocktailSearch = () => {
 				</ul>
 			</div>
 
-
-
-
 		</div>
 	);
 };

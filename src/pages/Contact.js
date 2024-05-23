@@ -1,92 +1,49 @@
 import React from "react";
-import img1 from '../images/Imgdrog.jpg'
-import img2 from '../images/davilogo.jpg'
-import img3 from '../images/nequilogo.jpg'
-import img4 from '../images/pselogo.jpg'
-import img5 from '../images/facebook.png'
-import img6 from '../images/youtube.png'
-import img7 from '../images/x.png'
-import img8 from '../images/instagram.png'
+
+import Navigation from '../components/Navigation'
+import Menu from '../components/Menu'
+
+import Footer from '../components/Footer'
+// import Footer from './components/Footer'
+import video from '../images/glass.jpg'
+
 
 const Contact = () => {
-  return (
-    <body>
-      <div class="bg-black text-white py-1">
-      </div>
-      <div class="flex items-center">
-        <h1 class="text-6xl font-bold mr-4 ml-20 mt-10">Contactenos</h1>
-      </div>
+	return (
+		<div class="relative min-h-screen h-full bg-white">
+			<img class="absolute top-0 left-0 w-full h-full object-cover p-2 md:p-7 rounded-[1.5rem] md:rounded-[3rem] object-center" src={video} frameborder="0" />
+			<div class="relative z-10 flex items-center justify-between flex-col pt-5 md:pt-10 h-screen">
+				<Navigation />
+				<div className="w-full px-5 md:px-0 mt-2 md:mt-2">
+					<div class="border-2 border-white hover:border-black container md:mx-auto bg-white rounded-xl mb-7 py-7 px-4 md:px-10">
+						<h2 className="text-3xl font-semibold tracking-tighter mb-4">Contactanos</h2>
+						<div className="flex flex-col md:flex-row w-full gap-7">
+							<div className="md:w-1/2 flex flex-col gap-4">
+								<input type="text" className="border-2 border-black rounded-full py-3 px-5 decoration-gray-400 hover:decoration-black text-xl focus:outline-none focus:border-black max-w-screen-sm" placeholder="Nombre*" />
+								<input type="text" className="border-2 border-black rounded-full py-3 px-5 decoration-gray-400 hover:decoration-black text-xl focus:outline-none focus:border-black max-w-screen-sm" placeholder="Apellido*" />
+								<input type="email" className="border-2 border-black rounded-full py-3 px-5 decoration-gray-400 hover:decoration-black text-xl focus:outline-none focus:border-black max-w-screen-sm" placeholder="Correo electronico*" />
+							</div>
 
-      <div className="float-right mt-12 mr-20 w-1/3 h-auto object-contain">
-        <img src={img1} alt="" className="rounded-md"/>
-        <div />
-      </div>
-
-      <div class="flex">
-        <h1 class="text-3xl font-bold mr-4 ml-20 mt-12">Nombre</h1>
-        <h1 class="text-3xl font-bold mr-4 ml-52 mt-12">Apellido</h1>
-
-      </div>
-      <div class="flex items-center">
-        <input type="text" class="border border-black rounded-md px-6 py-2 focus:outline-none focus:border-black ml-20 mt-3" placeholder="Digite su nombre..." />
-        <input type="text" class="border border-black rounded-md px-7 py-2 focus:outline-none focus:border-black ml-16 mt-3" placeholder="Digite su apellido..." />
-      </div>
+							<div class="md:w-1/2 flex flex-col">
+								<textarea type="text" class="h-full mb-2 border-2 p-4 border-black  decoration-gray-400 text-xl rounded-2xl focus:outline-none focus:border-black max-w-screen-sm" placeholder="Deje su mensaje aquí..." />
+								<button className="border-2 border-black bg-black hover:bg-white text-xl text-white hover:text-black font-medium py-3 px-12 rounded-full">
+									Enviar
+								</button>
+							</div>
+						</div>
 
 
-      <div class="flex flex-col">
-        <h1 class="text-3xl font-bold mr-4 ml-20 mt-12">Correo electronico</h1>
-        <input type="text" class="border border-black rounded-md px-4 py-2 focus:outline-none focus:border-black ml-20 mt-3 max-w-screen-sm" placeholder="Coloque su correo electronico..." />
+					</div>
 
-      </div>
 
-      <button className=" float-right mt-10 mr-20 bg-black hover:bg-blue-700 text-white font-bold py-2 px-36 rounded">
-        Enviar
-      </button>
+			
 
-      <div class="flex flex-col">
-        <h1 class="text-3xl font-bold mr-4 ml-20 mt-12">Mensaje</h1>
-        <input type="text" class="h-24 border border-black rounded-md px-4 py-2 focus:outline-none focus:border-black ml-20 mt-3 max-w-screen-sm" placeholder="Deje su mensaje aquí..." />
-      </div>
+				</div>
 
-      <div class="mt-16 bg-black text-white py-1">
-      </div>
+		<Footer />
 
-      <div className="container mx-auto flex flex-column md:flex-row justify-between items-center">
-        <div>
-          <h3 class="font-bold mb-6">Siguenos para más novedades</h3>
-          <div className="flex gap-4"> 
-            <a className="hover:font-medium" rel="noreferrer" target="_blank" href="https://www.facebook.com/"><img src={img5} alt="" className="w-8"/></a>
-            <a rel="noreferrer" target="_blank" href="https://www.youtube.com/"><img src={img6} alt="" className="w-8"/></a>
-            <a rel="noreferrer" target="_blank" href="https://twitter.com/?lang=es"><img src={img7} alt="" className="w-8"/></a>
-            <a rel="noreferrer" target="_blank" href="https://www.instagram.com/"><img src={img8} alt="" className="w-8"/></a>
-          </div>
-        </div>
-        <div className="">
-          <h3 className="mt-6 font-bold">Medios de pago</h3>
-          <div className="gap-10 flex w-full mt-4">
-            <img
-              src={img4}
-              alt="Descripción de la imagen 1"
-              className="rounded-md mb-4 w-36 h-auto"
-            />
-            <img
-              src={img3}
-              alt="Descripción de la imagen 2"
-              className="rounded-md mb-4 w-36 h-auto"
-            />
-            <img
-              src={img2}
-              alt="Descripción de la imagen 3"
-              className="rounded-md w-36 h-[80px]"
-            />
-          </div>
-
-        </div>
-
-      </div>
-
-    </body>
-  )
+			</div></div>
+	)
 }
 
 export default Contact
