@@ -2,11 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 import Navigation from '../components/Navigation'
-import Menu from '../components/Menu'
+import Inicio from '../components/home/Inicio'
+import Testimonios from '../components/home/Testimonios'
 
-import CocktailSearch from './CocktailSearch';
-import header from '../images/header.jpg'
-import video from '../images/glass.jpg'
+
+import Footer from '../components/Footer';
+import Search from '../components/Search';
+import Referencias from '../components/home/Referencias';
+
 const Home = () => {
 	const [products, setProducts] = useState([]);
 
@@ -37,14 +40,13 @@ const Home = () => {
 	}, []); // El segundo parámetro [] indica que este efecto se ejecuta solo una vez al montar el componente
 
 	return (
-		<div class="relative min-h-screen h-full bg-white">
-			<img class="absolute top-0 left-0 w-full h-full object-cover p-2 md:p-7 rounded-[3rem] object-center" src={video} frameborder="0" />
-			<div class="relative z-10 flex items-center justify-between flex-col  pt-10 h-screen">
-				<Navigation />
-
-				<Menu />
-			</div>
+		<div className='bg-black'>
+			<Inicio />
+			<Referencias />
+			<Testimonios />
+			<Footer />
 		</div>
+
 	)
 }
 

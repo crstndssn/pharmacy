@@ -16,20 +16,51 @@ import Product from './pages/Product'
 import Contact from './pages/Contact'
 import About from './pages/About';
 import ProductDetail from './pages/ProductDetail';
+import RegisterPage from './pages/RegisterPage';
+
+import { AuthProvider } from "./context/AuthContext"
+import { LoginPage } from './pages/LoginPage';
+import { TasksPage } from './pages/TasksPage';
+import { TaskFormPage } from './pages/TaskFormPage';
+import Profile from './pages/Profile';
+
+import { ProtectedRoute } from './ProtectedRoute';
+import { TaskProvider } from './context/TaskContext';
+import SubFooter from './components/SubFooter';
 
 function App() {
 	return (
-		<Router>
-			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/product" element={<Product />} />
-				<Route path="/products" element={<Products />} />
-				<Route path="/all" element={<AllProducts />} />
-				<Route path="/contact" element={<Contact />} />
-				<Route path="/about" element={<About />} />
-				<Route path="/product/:id" element={<ProductDetail />} />
-			</Routes>
-		</Router>
+		<AuthProvider>
+			<TaskProvider>
+				<Router>
+					<Navigation />
+					<Routes>
+						<Route path="/product" element={<Product />} />
+						<Route path="/products" element={<Products />} />
+						<Route path="/all" element={<AllProducts />} />
+						<Route path="/contact" element={<Contact />} />
+						<Route path="/about" element={<About />} />
+						<Route path="/product/:id" element={<ProductDetail />} />
+
+						{/* new routes */}
+						<Route path="/" element={<Home />} />
+						<Route path="/login" element={<LoginPage />} />
+						<Route path="/register" element={<RegisterPage />} />
+
+						{/* new routes */}
+						<Route element={<ProtectedRoute />}>
+							<Route path="/tasks" element={<TasksPage />} />
+							<Route path="/add-task" element={<TaskFormPage />} />
+							<Route path="/tasks/:id" element={<TaskFormPage />} />
+							<Route path="/profile" element={<Profile />} />
+						</Route>
+
+					</Routes>
+					<SubFooter />
+				</Router>
+			</TaskProvider>
+		</AuthProvider>
+
 	);
 }
 
